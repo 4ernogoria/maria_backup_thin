@@ -1,4 +1,4 @@
-FROM mariabase 
+FROM 4ernogoria/mariadb_new_base
 
 MAINTAINER SharxDC
 
