@@ -1,1 +1,8 @@
-1-59 * * * * /bin/bash /home/alix/script
+# do daily/weekly/monthly maintenance
+# min	hour	day	month	weekday	command
+1-59    *       *       *       *       run-parts /home/oneadmin/periodic/15min
+*/2    *       *       *       *       run-parts /home/oneadmin/periodic/hourly
+*/5     *       *       *       *       run-parts /home/oneadmin/periodic/daily
+0       3       *       *       6       run-parts /home/oneadmin/periodic/weekly
+30      3       1       1       *       run-parts /home/oneadmin/periodic/monthly
+

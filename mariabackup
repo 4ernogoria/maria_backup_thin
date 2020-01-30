@@ -1,0 +1,10 @@
+#!/bin/sh
+#define the variables beneath
+GZIP=$(which gzip)
+MARIABACKUP=$(which mariabackup)
+USER=oneadmin
+DB=opennebula
+NOW=$(date '+%d_%H:%M:%S')
+FILE=mbackup-$NOW.gz
+BDIR=/backup/hourly
+$MARIABACKUP --backup --databases=$DB --user=$USER --stream=xbstream | $GZIP > $BDIR/$FILE && echo "$now hourly backup has finished" >> /var/log/db_backup_cron.log
