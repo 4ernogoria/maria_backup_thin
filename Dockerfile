@@ -1,4 +1,4 @@
-FROM localhost/maria_base_lnk 
+FROM 4ernogoria/maria_base_lnk 
 
 MAINTAINER SharxDC
 
