@@ -1,4 +1,4 @@
-FROM localhost/liks_base_v1 
+FROM localhost/maria_base_lnk 
 
 MAINTAINER SharxDC
 
@@ -15,7 +15,7 @@ RUN yum -y install --setopt=tsflags=nodocs MariaDB-backup MariaDB-client \
     touch /mnt/backup/oneadmin/mysqldump.cnf && \
     ln -s /mnt/backup/oneadmin/mysqldump.cnf /etc/my.cnf.d/mysqldump.cnf && \
     chown -R 9869:9869 /mnt/backup/oneadmin && \
-    rm -rf /home/oneadmin /cronie-anacron-1.4.11-23.1.el7.x86_64.rpm /cronie-1.4.11-23.1.el7.x86_64.rpm /var/log && \
+    rm -rf /home/oneadmin /cronie-anacron-1.4.11-23.1.el7.x86_64.rpm /cronie-1.4.11-23.1.el7.x86_64.rpm /var/log/* && \
     ln -s /mnt/backup/oneadmin /home/oneadmin
 
 STOPSIGNAL SIGTERM
